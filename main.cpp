@@ -23,8 +23,6 @@ const string saveFileName = "pop.txt";
 
 
 int main(int argc, const char* argv[]) {
-	_wchdir(L"../");//作業ディレクトリをprogramsから親ディレクトリに移す
-
 	if (argc != ARGC_COUNT) {
 		writeOutput(string("エラー 引数の数が不正です"));
 		exit(-1);
