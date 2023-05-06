@@ -4,7 +4,7 @@ libtorch-win-shared-with-deps-debug-2.0.0+cpu
 が必要です。
 
 exeはprograms直下に配置してください。
-programs\model 直下に学習済みモデルmodel.ptを置いてください。
+programs\application\auto_difficulty_prediction\model 直下に学習済みモデルmodel.ptを置いてください。
 
 exeファイルを動かすときは以下のdllも必要です。
 asmjit.dll

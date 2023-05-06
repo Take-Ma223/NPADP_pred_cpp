@@ -55,7 +55,7 @@ torch::jit::script::Module loadModel()
 
 	// 学習済みモデルの読み込み
 	try {
-		module = torch::jit::load("programs/model/model.pt", torch::kCPU);
+		module = torch::jit::load("programs/application/auto_difficulty_prediction/model/model.pt", torch::kCPU);
 	}
 	catch (const c10::Error& e) {
 		throw std::ios_base::failure("エラー model.ptファイルが見つかりません。");
