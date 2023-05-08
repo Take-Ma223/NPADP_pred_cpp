@@ -41,9 +41,14 @@ int main(int argc, const char* argv[]) {
 
 	auto tensor = makeTensor(argv);
 	double result = predict(module, tensor);
+	result = round(result*100)/100;
+
+	ostringstream oss;
+	oss << fixed;
+	oss << setprecision(2) << result;
 
 	//Œ‹‰Ê‘‚«ž‚Ý
-	writeOutput(to_string(result));
+	writeOutput(oss.str()+"%");
 
 	//I—¹
 	exit(0);
