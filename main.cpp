@@ -48,7 +48,7 @@ int main(int argc, const char* argv[]) {
 	oss << setprecision(2) << result;
 
 	//Œ‹‰Ê‘‚«ž‚Ý
-	writeOutput(oss.str()+"%");
+	writeOutput(oss.str());
 
 	//I—¹
 	exit(0);
