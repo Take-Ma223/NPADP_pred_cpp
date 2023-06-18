@@ -46,7 +46,7 @@ int main() {
 		// torch::jit::script::Module 型で module 変数の定義
 		module = loadModel();
 	}
-	catch (std::ios_base::failure e) {
+	catch (c10::Error e) {
 		writeOutput(std::string(e.what()));
 		exit(-1);
 	}
@@ -141,17 +141,13 @@ double getDifficultyValue(std::vector<std::string> strList)
 	return result;
 }
 
+
 torch::jit::script::Module loadModel()
 {
 	torch::jit::script::Module module;
 
 	// 学習済みモデルの読み込み
-	try {
-		module = torch::jit::load("programs/application/auto_difficulty_prediction/model/model.pt", torch::kCPU);
-	}
-	catch (const c10::Error& e) {
-		throw std::ios_base::failure("エラー model.ptファイルが見つかりません。");
-	}
+	module = torch::jit::load("programs/application/auto_difficulty_prediction/model/model.pt", torch::kCPU);
 
 	return module;
 }
