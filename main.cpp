@@ -71,6 +71,7 @@ void startServerLoop()
 	dstSocket = accept(srcSocket, (struct sockaddr*)&dstAddr, &dstAddrSize);
 	err = WSAGetLastError();
 	printf("Connected from %s\n", inet_ntoa(dstAddr.sin_addr));
+	printf("err:%d\n", err);
 
 	/* パケット受信 */
 	while (1) {
@@ -221,10 +222,12 @@ void initSocket() {
 	/* ソケットのバインド */
 	auto bindResult = bind(srcSocket, (struct sockaddr*)&srcAddr, sizeof(srcAddr));
 	int err = WSAGetLastError();
+	printf("err:%d\n", err);
 
 	/* 接続の許可 */
 	listen(srcSocket, 1);
 	err = WSAGetLastError();
+	printf("err:%d\n", err);
 
 	/* Windows 独自の設定 */
 	//WSACleanup();
