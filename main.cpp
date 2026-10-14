@@ -214,7 +214,7 @@ void initSocket() {
 	memset(&srcAddr, 0, sizeof(srcAddr));
 	srcAddr.sin_port = htons(port);
 	srcAddr.sin_family = AF_INET;
-	srcAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+	srcAddr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
 
 	/* ソケットの生成 */
 	srcSocket = socket(AF_INET, SOCK_STREAM, 0);
